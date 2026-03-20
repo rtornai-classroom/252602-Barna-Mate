@@ -82,8 +82,8 @@ int main() {
 
     //  Geometria definiálása
     float quadVertices[] = {
-        -50.0f,  50.0f,  -50.0f, -50.0f,   50.0f, -50.0f,
-        -50.0f,  50.0f,   50.0f, -50.0f,   50.0f,  50.0f
+        -radius,  radius,  -radius, -radius,   radius, -radius,
+        -radius,  radius,   radius, -radius,   radius,  radius
     };
     float lineVertices[] = {
         -100.0f, 0.0f,    100.0f, 0.0f
