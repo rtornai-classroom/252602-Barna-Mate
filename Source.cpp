@@ -1,4 +1,4 @@
-﻿// Konstansek, amiket a common.cpp elvár, mielőtt betöltjük
+// Konstansek, amiket a common.cpp elvár, mielőtt betöltjük
 const int VAOCount = 2;
 const int BOCount = 2;
 const int ProgramCount = 1;
@@ -42,9 +42,12 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 
     // Indítás S gombbal (25 fok, 10px sebesség) //7)
     if (key == GLFW_KEY_S && action == GLFW_PRESS) {
+
+        float vektor = 10.0f;
+
         float angleRad = 25.0f * (asin(1.0)*2.0f / 180.0f);
-        circleVx = glm::cos(angleRad) * 10.0f;
-        circleVy = glm::sin(angleRad) * 10.0f;
+        circleVx = glm::cos(angleRad) * vektor;
+        circleVy = glm::sin(angleRad) * vektor;
     }
 
     // Vízszintesre állítás V gombbal
