@@ -174,6 +174,13 @@ void display(GLFWwindow* window, double currentTime) {
 }
 
 int main() {
+
+    cout << "Bezier Curve Editor" << endl;
+    cout << "  Left click  : add control point" << endl;
+    cout << "  Left drag   : move control point" << endl;
+    cout << "  Right click : remove control point" << endl;
+    cout << "  ESC         : exit" << endl;
+    
     init(3, 3, GLFW_OPENGL_CORE_PROFILE);
 
     ShaderInfo shaders[] = {
