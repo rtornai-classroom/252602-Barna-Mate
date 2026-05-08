@@ -93,8 +93,8 @@ void initShaderProgram() {
 
     glEnable(GL_DEPTH_TEST);
 
-    glDisable(GL_CULL_FACE); // Kikapcsolja a belső lapok eldobását, így a kocka elejét fogjuk látni
-    glClearColor(0.1f, 0.1f, 0.1f, 1.0f); // Sötétszürke háttér (az űr) beállítása
+    glDisable(GL_CULL_FACE); 
+    glClearColor(0.1f, 0.1f, 0.1f, 1.0f); 
 
 }
 
@@ -127,7 +127,7 @@ void display(GLFWwindow* window, double currentTime) {
         glDrawArrays(GL_TRIANGLES, 0, 36);
     }
 
-    // --- NAP (GÖMB) RAJZOLÁSA --- 
+    /
     glUniform1i(glGetUniformLocation(program[0], "useTexture"), 1);
     glBindTexture(GL_TEXTURE_2D, texture[0]);
     matModel = glm::translate(glm::mat4(1.0f), lightPos);
@@ -138,21 +138,21 @@ void display(GLFWwindow* window, double currentTime) {
 
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     if (action == GLFW_PRESS || action == GLFW_REPEAT) {
-        // Kamera mozgatása nyilakkal [cite: 144, 145]
+        // Kamera mozgatása nyilakkal
         if (key == GLFW_KEY_LEFT) cameraAngle += 0.05f;
         if (key == GLFW_KEY_RIGHT) cameraAngle -= 0.05f;
         if (key == GLFW_KEY_UP) cameraZ += 0.1f;
         if (key == GLFW_KEY_DOWN) cameraZ -= 0.1f;
 
-        // Világítás kapcsoló [cite: 155]
+        
         if (key == GLFW_KEY_L && action == GLFW_PRESS) lightOn = !lightOn;
 
-        // Kilépés ESC gombbal 
+     
         if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) glfwSetWindowShouldClose(window, GL_TRUE);
     }
 }
 
-// Üres Callbackek a Linker hibák elkerüléséhez
+
 void cursorPosCallback(GLFWwindow* window, double xPos, double yPos) {}
 void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods) {}
 
